@@ -38,3 +38,12 @@ export const cartIconStyles = StyleSheet.create({
         backgroundColor: '#8FBC8B'
     }
 });
+
+export const productListStyles = StyleSheet.create({
+    mainContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        flexDirection: 'column',
+        backgroundColor: 'gray'
+    }
+});
