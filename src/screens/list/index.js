@@ -5,6 +5,7 @@ import { withNavigation } from 'react-navigation';
 import { mapDispatchToProps } from 'src/actions';
 import Product from 'src/screens/list/Product';
 import CartIcon from 'src/screens/list/CartIcon';
+import { productListStyles } from 'src/assets/styles';
 
 class ProductList extends PureComponent {
     static navigationOptions = {
@@ -22,7 +23,7 @@ class ProductList extends PureComponent {
 
     render() {
         return (
-            <View style={{ flex: 1, justifyContent: 'center', flexDirection: 'column', backgroundColor: 'gray' }}>
+            <View style={productListStyles.mainContainer}>
                 <FlatList
                     keyExtractor={this.onKeyExtractor}
                     data={this.props.productsReducers}
