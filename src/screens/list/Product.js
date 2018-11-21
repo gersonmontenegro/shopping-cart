@@ -74,7 +74,7 @@ class Product extends PureComponent {
             <View style={[theme.cardStyle, productStyles.mainContainer]}>
                 <View style={productStyles.productContainer}>
                     <Icon
-                        name={'ios-checkmark-circle-outline'}
+                        name={this.setIconName()}
                         size={30}
                         style={productStyles.icon}
                     />
