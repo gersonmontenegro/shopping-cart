@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { getTheme } from 'react-native-material-kit';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Button } from 'react-native-elements';
+import { fixedNumber } from 'src/providers/helpers';
 
 const theme = getTheme();
 
@@ -59,7 +60,7 @@ class Product extends PureComponent {
                             {this.props.detail.name}
                         </Text>
                         <Text style={styles.price}>
-                            Price: ${this.props.detail.price}
+                            Price: ${fixedNumber(this.props.detail.price)}
                         </Text>
                     </View>
                     {
