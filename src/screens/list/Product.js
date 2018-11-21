@@ -28,7 +28,7 @@ class Product extends PureComponent {
     showSubTotal = () => {
         if (this.props.showDetails) {
             return (
-                <Text style={styles.price}>
+                <Text style={productStyles.price}>
                     Subtotal: ${fixedNumber(this.props.detail.price * this.props.detail.quantity)}
                 </Text>
             );
@@ -38,7 +38,7 @@ class Product extends PureComponent {
     showQuantity = () => {
         if (this.props.showDetails) {
             return (
-                <Text style={styles.price}>
+                <Text style={productStyles.price}>
                     Quant.: {this.props.detail.quantity}
                 </Text>
             );
