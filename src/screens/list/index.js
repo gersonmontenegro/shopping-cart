@@ -3,6 +3,10 @@ import { View, FlatList } from 'react-native';
 import { Text } from 'react-native-elements';
 
 class ProductList extends PureComponent {
+    static navigationOptions = {
+        headerTitle: 'Shopping cart!!',
+    }
+
     constructor(props) {
         super(props);
     }
