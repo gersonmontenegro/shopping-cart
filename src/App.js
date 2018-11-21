@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
-import ProductList from './screens/list';
 import { MainNavigator } from './navigation/';
+import { Provider } from 'react-redux';
+import store from './store';
 
 export default class App extends Component {
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: "center" }}>
+      <Provider store={store}>
         <MainNavigator />
-      </View>
+      </Provider>
     );
   }
 }
