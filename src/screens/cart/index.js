@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
-import { View, Text } from 'react-native';
+import { connect } from 'react-redux';
+import { withNavigation } from 'react-navigation'
+import { mapDispatchToProps } from 'src/actions';
 
 class Cart extends PureComponent {
     constructor(props) {
@@ -15,4 +17,9 @@ class Cart extends PureComponent {
     }
 }
 
-export default Cart;
+const mapStateToProps = (state) => {
+    const { cartReducers } = state
+    return { cartReducers }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(Cart));
