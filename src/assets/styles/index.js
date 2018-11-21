@@ -29,3 +29,12 @@ export const productStyles = StyleSheet.create({
         flex: 1
     }
 });
+
+export const cartIconStyles = StyleSheet.create({
+    badgeStyle: {
+        color: 'white'
+    },
+    badgeContainerStyle: {
+        backgroundColor: '#8FBC8B'
+    }
+});
