@@ -22,3 +22,8 @@ const cartReducer = (state = initialState.cartProducts, action) => {
     }
     return state;
 }
+
+export default combineReducers({
+    productsReducers: productReducer,
+    cartReducers: cartReducer,
+});
