@@ -14,4 +14,18 @@ export const productStyles = StyleSheet.create({
         backgroundColor: 'rgba(255,255,255,0)',
         left: 5
     },
+    mainContainer: {
+        marginTop: 5,
+        padding: 10
+    },
+    productContainer: {
+        flexDirection: 'row',
+        backgroundColor: '#c5c5c5',
+        flex: 1
+    },
+    nameAndPriceContainer: {
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        flex: 1
+    }
 });
