@@ -19,6 +19,10 @@ const calculateTotal = (list) => {
     return total;
 }
 
+const onClickCart = (props) => {
+    props.navigation.navigate('Cart');
+}
+
 const mapStateToProps = (state) => {
     const { cartReducers } = state
     return { cartReducers }
