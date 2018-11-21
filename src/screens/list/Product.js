@@ -25,6 +25,16 @@ class Product extends PureComponent {
         this.props.onRemoveProduct(this.props.detail);
     }
 
+    showQuantity = () => {
+        if (this.props.showDetails) {
+            return (
+                <Text style={styles.price}>
+                    Quant.: {this.props.detail.quantity}
+                </Text>
+            );
+        }
+    }
+
     createButton = (icon, event) => {
         return (
             <TouchableWithoutFeedback
