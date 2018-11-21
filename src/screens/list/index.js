@@ -1,14 +1,17 @@
 import React, { PureComponent } from 'react';
 import { View, FlatList } from 'react-native';
-import { Text } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { withNavigation } from 'react-navigation';
 import { mapDispatchToProps } from 'src/actions';
 import Product from 'src/screens/list/Product';
+import CartIcon from 'src/screens/list/CartIcon';
 
 class ProductList extends PureComponent {
     static navigationOptions = {
         headerTitle: 'Shopping cart!!',
+        headerRight: (
+            <CartIcon />
+        )
     }
 
     constructor(props) {
