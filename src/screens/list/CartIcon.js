@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Badge } from 'react-native-elements';
