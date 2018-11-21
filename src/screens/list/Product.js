@@ -4,6 +4,7 @@ import { getTheme } from 'react-native-material-kit';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { fixedNumber } from 'src/providers/helpers';
 import { productStyles } from 'src/assets/styles';
+import { connect } from 'react-redux';
 
 const theme = getTheme();
 
@@ -67,4 +68,9 @@ class Product extends PureComponent {
     }
 }
 
-export default Product;
+const mapStateToProps = (state) => {
+    const { productsReducers, cartReducers } = state
+    return { productsReducers, cartReducers }
+}
+
+export default connect(mapStateToProps)(Product);
