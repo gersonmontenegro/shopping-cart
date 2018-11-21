@@ -17,7 +17,18 @@ const productReducer = (state = initialState.products, action) => {
 const cartReducer = (state = initialState.cartProducts, action) => {
     switch (action.type) {
         case 'ADD_PRODUCT': {
-            return [...state, action.payload];
+            var exist = false;
+            state.forEach((product, index) => {
+                if (product.name == action.payload.name) {
+                    exist = true;
+                    product.quantity++;
+                }
+            })
+            if (!exist) {
+                state.push({ name: action.payload.name, price: action.payload.price, quantity: 1 });
+            }
+            return [...state];
+        }
         }
     }
     return state;
