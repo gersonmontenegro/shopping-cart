@@ -25,6 +25,16 @@ class Product extends PureComponent {
         this.props.onRemoveProduct(this.props.detail);
     }
 
+    showSubTotal = () => {
+        if (this.props.showDetails) {
+            return (
+                <Text style={styles.price}>
+                    Subtotal: ${this.props.detail.price * this.props.detail.quantity}
+                </Text>
+            );
+        }
+    }
+
     showQuantity = () => {
         if (this.props.showDetails) {
             return (
