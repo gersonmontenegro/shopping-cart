@@ -37,3 +37,6 @@ Again, I'm boing through the relevant details:
  3. Specific quantity of this product in the cart.
  4. Amount with the subtotal price of this product in the cart.
 
+**App working**
+
+<img src="https://github.com/gersonmontenegro/shopping-cart/blob/master/src/assets/gif/shopping-cart.gif" width="300px">
