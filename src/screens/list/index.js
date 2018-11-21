@@ -22,4 +22,9 @@ class ProductList extends PureComponent {
     }
 }
 
-export default ProductList;
+const mapStateToProps = (state) => {
+    const { productsReducers, cartReducers } = state
+    return { productsReducers, cartReducers }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(ProductList));
