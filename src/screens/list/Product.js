@@ -46,6 +46,19 @@ class Product extends PureComponent {
         );
     }
 
+    createNameAndPrice = () => {
+        return (
+            <View style={{ flexDirection: 'column', alignItems: 'flex-start', flex: 1 }}>
+                <Text style={styles.title}>
+                    {this.props.detail.name}
+                </Text>
+                <Text style={styles.price}>
+                    Price: ${fixedNumber(this.props.detail.price)}
+                </Text>
+            </View>
+        );
+    }
+
     render() {
         return (
             <View style={[theme.cardStyle, { marginTop: 5, padding: 10 }]}>
@@ -55,14 +68,9 @@ class Product extends PureComponent {
                         size={30}
                         style={styles.icon}
                     />
-                    <View style={{ flexDirection: 'column', alignItems: 'flex-start', flex: 1 }}>
-                        <Text style={styles.title}>
-                            {this.props.detail.name}
-                        </Text>
-                        <Text style={styles.price}>
-                            Price: ${fixedNumber(this.props.detail.price)}
-                        </Text>
-                    </View>
+                    {
+                        this.createNameAndPrice()
+                    }
                     {
                         this.createButton('ios-remove-circle')
                     }
