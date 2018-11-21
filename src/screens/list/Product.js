@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import { getTheme } from 'react-native-material-kit';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { Button } from 'react-native-elements';
 
 const theme = getTheme();
 
@@ -25,6 +26,23 @@ const styles = StyleSheet.create({
 class Product extends PureComponent {
     constructor(props) {
         super(props);
+        this.createButton = this.createButton.bind(this);
+    }
+
+    createButton = (icon) => {
+        return (
+            <TouchableWithoutFeedback
+                style={{
+                    alignSelf: "flex-end",
+                    right: 10,
+                }}
+            >
+                <Icon
+                    name={icon}
+                    size={40}
+                />
+            </TouchableWithoutFeedback>
+        );
     }
 
     render() {
@@ -44,28 +62,12 @@ class Product extends PureComponent {
                             Price: ${this.props.detail.price}
                         </Text>
                     </View>
-                    <TouchableWithoutFeedback
-                        style={{
-                            alignSelf: "flex-end",
-                            right: 10,
-                        }}
-                    >
-                        <Icon
-                            name="ios-remove-circle"
-                            size={40}
-                        />
-                    </TouchableWithoutFeedback>
-                    <TouchableWithoutFeedback
-                        style={{
-                            alignSelf: "flex-end",
-                            right: 10,
-                        }}
-                    >
-                        <Icon
-                            name="ios-add-circle"
-                            size={40}
-                        />
-                    </TouchableWithoutFeedback>
+                    {
+                        this.createButton('ios-remove-circle')
+                    }
+                    {
+                        this.createButton('ios-add-circle')
+                    }
                 </View>
             </View>
         );
