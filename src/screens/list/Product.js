@@ -29,7 +29,7 @@ class Product extends PureComponent {
         if (this.props.showDetails) {
             return (
                 <Text style={styles.price}>
-                    Subtotal: ${this.props.detail.price * this.props.detail.quantity}
+                    Subtotal: ${fixedNumber(this.props.detail.price * this.props.detail.quantity)}
                 </Text>
             );
         }
