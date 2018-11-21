@@ -7,6 +7,7 @@ import { withNavigation } from 'react-navigation'
 const CartIcon = (props) => (
     <View style={{ padding: 5, flexDirection: 'row' }}>
         <Badge value={calculateTotal(props.cartReducers)} textStyle={{ color: 'white' }} containerStyle={{ backgroundColor: '#8FBC8B' }} />
+        <Icon name='ios-cart' size={20} onPress={() => onClickCart(props)} />
     </View>
 )
 
