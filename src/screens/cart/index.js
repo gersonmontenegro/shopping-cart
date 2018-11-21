@@ -11,7 +11,7 @@ class Cart extends PureComponent {
     render() {
         return (
             <View style={{ flex: 1, justifyContent: 'center', flexDirection: 'column' }}>
-                <Text>Cart list goes here!</Text>
+                            showDetails
             </View>
         );
     }
