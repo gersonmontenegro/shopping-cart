@@ -42,6 +42,16 @@ class Product extends PureComponent {
         );
     }
 
+    inCart = () => {
+        var exists = false;
+        this.props.cartReducers.forEach((product) => {
+            if (product.name == this.props.detail.name) {
+                exists = true;
+            }
+        });
+        return exists;
+    }
+
     setIconName = () => {
         return this.inCart() ? 'ios-checkmark-circle' : 'ios-checkmark-circle-outline'
     }
