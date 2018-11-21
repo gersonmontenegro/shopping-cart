@@ -1,28 +1,11 @@
 import React, { PureComponent } from 'react';
-import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, TouchableWithoutFeedback } from 'react-native';
 import { getTheme } from 'react-native-material-kit';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { Button } from 'react-native-elements';
 import { fixedNumber } from 'src/providers/helpers';
+import { productStyles } from 'src/assets/styles';
 
 const theme = getTheme();
-
-const styles = StyleSheet.create({
-    title: {
-        left: 10,
-        fontSize: 20,
-        fontWeight: 'bold'
-    },
-    price: {
-        left: 10,
-    },
-    icon: {
-        color: 'black',
-        backgroundColor: 'rgba(255,255,255,0)',
-        left: 5
-    },
-});
-
 
 class Product extends PureComponent {
     constructor(props) {
@@ -50,10 +33,10 @@ class Product extends PureComponent {
     createNameAndPrice = () => {
         return (
             <View style={{ flexDirection: 'column', alignItems: 'flex-start', flex: 1 }}>
-                <Text style={styles.title}>
+                <Text style={productStyles.title}>
                     {this.props.detail.name}
                 </Text>
-                <Text style={styles.price}>
+                <Text style={productStyles.price}>
                     Price: ${fixedNumber(this.props.detail.price)}
                 </Text>
             </View>
@@ -67,7 +50,7 @@ class Product extends PureComponent {
                     <Icon
                         name={'ios-checkmark-circle-outline'}
                         size={30}
-                        style={styles.icon}
+                        style={productStyles.icon}
                     />
                     {
                         this.createNameAndPrice()
