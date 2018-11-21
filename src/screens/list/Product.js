@@ -28,6 +28,7 @@ class Product extends PureComponent {
     constructor(props) {
         super(props);
         this.createButton = this.createButton.bind(this);
+        this.createNameAndPrice = this.createNameAndPrice.bind(this);
     }
 
     createButton = (icon) => {
