@@ -85,6 +85,12 @@ class Product extends PureComponent {
                 <Text style={productStyles.price}>
                     Price: ${fixedNumber(this.props.detail.price)}
                 </Text>
+                {
+                    this.showQuantity()
+                }
+                {
+                    this.showSubTotal()
+                }
             </View>
         );
     }
