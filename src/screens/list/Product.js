@@ -32,7 +32,7 @@ class Product extends PureComponent {
 
     createNameAndPrice = () => {
         return (
-            <View style={{ flexDirection: 'column', alignItems: 'flex-start', flex: 1 }}>
+            <View style={productStyles.nameAndPriceContainer}>
                 <Text style={productStyles.title}>
                     {this.props.detail.name}
                 </Text>
@@ -45,8 +45,8 @@ class Product extends PureComponent {
 
     render() {
         return (
-            <View style={[theme.cardStyle, { marginTop: 5, padding: 10 }]}>
-                <View style={{ flexDirection: 'row', backgroundColor: '#c5c5c5', flex: 1 }}>
+            <View style={[theme.cardStyle, productStyles.mainContainer]}>
+                <View style={productStyles.productContainer}>
                     <Icon
                         name={'ios-checkmark-circle-outline'}
                         size={30}
