@@ -4,6 +4,7 @@ import { Text } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { withNavigation } from 'react-navigation';
 import { mapDispatchToProps } from 'src/actions';
+import Product from 'src/screens/list/Product';
 
 class ProductList extends PureComponent {
     static navigationOptions = {
@@ -19,7 +20,14 @@ class ProductList extends PureComponent {
     render() {
         return (
             <View style={{ flex: 1, justifyContent: 'center', flexDirection: 'column', backgroundColor: 'gray' }}>
-                <Text>I'm the list!!!</Text>
+                <FlatList
+                    keyExtractor={this.onKeyExtractor}
+                    data={this.props.productsReducers}
+                    renderItem={(data) =>
+                        <Product
+                            detail={data.item}
+                        />}
+                />
             </View>
         );
     }
