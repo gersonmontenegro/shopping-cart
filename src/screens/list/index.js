@@ -16,7 +16,7 @@ class ProductList extends PureComponent {
     render() {
         return (
             <View style={{ flex: 1, justifyContent: 'center', flexDirection: 'column', backgroundColor: 'gray' }}>
-                <Text>I'm the list!</Text>
+                <Text>I'm the list!!!</Text>
             </View>
         );
     }
