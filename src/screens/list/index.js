@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react';
 import { View, FlatList } from 'react-native';
 import { Text } from 'react-native-elements';
+import { connect } from 'react-redux';
+import { withNavigation } from 'react-navigation';
+import { mapDispatchToProps } from 'src/actions';
 
 class ProductList extends PureComponent {
     static navigationOptions = {
