@@ -15,9 +15,11 @@ class Product extends PureComponent {
         this.createNameAndPrice = this.createNameAndPrice.bind(this);
     }
 
-    createButton = (icon) => {
+
+    createButton = (icon, event) => {
         return (
             <TouchableWithoutFeedback
+                onPress={event}
                 style={{
                     alignSelf: "flex-end",
                     right: 10,
@@ -57,10 +59,10 @@ class Product extends PureComponent {
                         this.createNameAndPrice()
                     }
                     {
-                        this.createButton('ios-remove-circle')
+                        this.createButton('ios-remove-circle', this.onClickRemove)
                     }
                     {
-                        this.createButton('ios-add-circle')
+                        this.createButton('ios-add-circle', this.onClickAdd)
                     }
                 </View>
             </View>
