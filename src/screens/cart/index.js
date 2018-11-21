@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { withNavigation } from 'react-navigation'
 import Product from 'src/screens/list/Product';
 import { mapDispatchToProps } from 'src/actions';
+import Resume from './Resume';
 
 class Cart extends PureComponent {
     constructor(props) {
@@ -15,6 +16,7 @@ class Cart extends PureComponent {
     render() {
         return (
             <View style={{ flex: 1, justifyContent: 'center', flexDirection: 'column' }}>
+                <Resume />
                 <FlatList
                     keyExtractor={this.onKeyExtractor}
                     data={this.props.cartReducers}
