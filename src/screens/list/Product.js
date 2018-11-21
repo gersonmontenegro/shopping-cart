@@ -42,6 +42,10 @@ class Product extends PureComponent {
         );
     }
 
+    setIconName = () => {
+        return this.inCart() ? 'ios-checkmark-circle' : 'ios-checkmark-circle-outline'
+    }
+
     createNameAndPrice = () => {
         return (
             <View style={productStyles.nameAndPriceContainer}>
