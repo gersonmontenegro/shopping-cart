@@ -114,7 +114,7 @@ class Product extends PureComponent {
 }
 
 const mapStateToProps = (state) => {
-    const { productsReducers, cartReducers } = state
+    const { productsReducers, cartReducers } = state;
     return { productsReducers, cartReducers }
 }
 
