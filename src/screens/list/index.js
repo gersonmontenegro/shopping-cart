@@ -30,6 +30,8 @@ class ProductList extends PureComponent {
                     renderItem={(data) =>
                         <Product
                             detail={data.item}
+                            onAddProduct={this.props.addProduct}
+                            onRemoveProduct={this.props.removeProduct}
                         />}
                 />
             </View>
