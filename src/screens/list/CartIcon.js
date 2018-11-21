@@ -11,6 +11,13 @@ const CartIcon = (props) => (
     </View>
 )
 
+const calculateTotal = (list) => {
+    var total = 0;
+    list.forEach((product) => {
+        total += product.quantity
+    });
+    return total;
+}
 
 const mapStateToProps = (state) => {
     const { cartReducers } = state
