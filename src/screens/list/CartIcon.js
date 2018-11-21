@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Badge } from 'react-native-elements';
 import { withNavigation } from 'react-navigation'
+import { cartIconStyles } from 'src/assets/styles';
 
 const CartIcon = (props) => (
     <View style={{ padding: 5, flexDirection: 'row' }}>
-        <Badge value={calculateTotal(props.cartReducers)} textStyle={{ color: 'white' }} containerStyle={{ backgroundColor: '#8FBC8B' }} />
+        <Badge value={calculateTotal(props.cartReducers)} textStyle={cartIconStyles.badgeStyle} containerStyle={cartIconStyles.badgeContainerStyle} />
         <Icon name='ios-cart' size={20} onPress={() => onClickCart(props)} />
     </View>
 )
