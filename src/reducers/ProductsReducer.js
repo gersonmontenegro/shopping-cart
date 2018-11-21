@@ -17,7 +17,28 @@ const productReducer = (state = initialState.products, action) => {
 const cartReducer = (state = initialState.cartProducts, action) => {
     switch (action.type) {
         case 'ADD_PRODUCT': {
-            return [...state, action.payload];
+            var exist = false;
+            state.forEach((product, index) => {
+                if (product.name == action.payload.name) {
+                    exist = true;
+                    product.quantity++;
+                }
+            })
+            if (!exist) {
+                state.push({ name: action.payload.name, price: action.payload.price, quantity: 1 });
+            }
+            return [...state];
+        }
+        case 'REMOVE_PRODUCT': {
+            state.forEach((product, index) => {
+                if (product.name == action.payload.name) {
+                    product.quantity--;
+                    if (product.quantity == 0) {
+                        state.splice(index, 1);
+                    }
+                }
+            })
+            return [...state];
         }
     }
     return state;

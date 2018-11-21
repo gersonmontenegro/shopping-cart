@@ -1,14 +1,18 @@
 import React, { PureComponent } from 'react';
 import { View, FlatList } from 'react-native';
-import { Text } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { withNavigation } from 'react-navigation';
 import { mapDispatchToProps } from 'src/actions';
 import Product from 'src/screens/list/Product';
+import CartIcon from 'src/screens/list/CartIcon';
+import { productListStyles } from 'src/assets/styles';
 
 class ProductList extends PureComponent {
     static navigationOptions = {
         headerTitle: 'Shopping cart!!',
+        headerRight: (
+            <CartIcon />
+        )
     }
 
     constructor(props) {
@@ -19,13 +23,15 @@ class ProductList extends PureComponent {
 
     render() {
         return (
-            <View style={{ flex: 1, justifyContent: 'center', flexDirection: 'column', backgroundColor: 'gray' }}>
+            <View style={productListStyles.mainContainer}>
                 <FlatList
                     keyExtractor={this.onKeyExtractor}
                     data={this.props.productsReducers}
                     renderItem={(data) =>
                         <Product
                             detail={data.item}
+                            onAddProduct={this.props.addProduct}
+                            onRemoveProduct={this.props.removeProduct}
                         />}
                 />
             </View>
